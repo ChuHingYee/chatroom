@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Just for fun</title>
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <link rel="stylesheet" href="./css/css.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="bar">
+            <p class="tle">just for fun</p>
+            <p class="static" id="static"></p>
+        </div>
+        <div class="showmessage" id="showMessage">
+        </div>
+        <div class="typing">
+            <div class="header">
+                <div class="pic">
+                    <a href="#"><img src="./imgs/fun.jpg" alt=""></a>
+                </div>
+                <div class="btn">
+                    <ul>
+                        <li>
+                            <input type="color" id="color" class="rbd">
+                        </li>
+                        <li>
+                            <label for="sendImage" class="imageLable">
+                                <input type="button" value="image" />
+                                <input id="sendImage" class="sendImage" type="file" value="image" />
+                            </label>
+                        </li>
+                        <li>
+                            <input type="button" id="fun" value="funfunfun" class="rbd">
+                        </li>
+                        <li>
+                            <input type="button" id="clean" value="clean">
+                        </li>
+                        <li>
+                            <input type="button" id="utlbtn" class="utlbtn" value="FULL-CREEN-ATTACK">
+                        </li>
+                    </ul>
+                </div>
+                <div class="funwrapper" id="funwrapper">
+                </div>
+                <div class="typeBlock">
+                    <textarea name="type" id="type" class="type"></textarea>
+                    <button class="send" id="send">send</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mask" id="mask"></div>
+        <div class="login" id="login">
+            <input type="text" id="name" class="name">
+            <button class="confirm" id="confirm">
+                <-WhatIsYourName</button>
+                    <p id="info"></p>
+        </div>
+        <div class="utlImg" id="big">
+            <img src="./imgs/utl.gif" alt="">
+        </div>
+    </div>
+        <script src="./socket.io/socket.io.js"></script>
+        <script src="./js/init.js"></script>
+</body>
+
+</html>
