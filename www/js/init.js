@@ -1,6 +1,8 @@
 window.onload = function() {
     var funchat = new funChat();
     funchat.init();
+    // funchat.init()._seleBtn("selebtn");
+
 };
 
 var funChat = function() {
@@ -10,6 +12,7 @@ var funChat = function() {
 funChat.prototype = {
     init: function() {
         var that = this;
+        that._seleBtn("selebtn");
         this.socket = io.connect();
         this.socket.on("connect", function() {
             // console.log(11);
@@ -139,7 +142,8 @@ funChat.prototype = {
         });
         that.socket.on("tip",function(num){
             that._tipForU(num);
-        })
+        });
+
 
 
     },
@@ -215,7 +219,19 @@ funChat.prototype = {
 
         }
     },
-
+    _seleBtn: function(ele) {
+        var that =  this;
+        var selebtn = that.$(ele);
+        var btns = that.$("btns")
+        selebtn.addEventListener("click",function(){
+               if(btns.style.display !== "block"){
+                btns.style.display = "block";
+                return
+               }else{
+                btns.style.display = "none";
+               }
+        },false)
+    },
     $: function(id) {
         return document.getElementById(id);
     }

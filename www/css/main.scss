@@ -9,194 +9,268 @@
     margin: 0
 }
 
-.main {
-    width: 650px;
-    height: 500px;
-    background-color: #eee;
-    border: 3px solid black;
-    margin: 100px auto 0;
-    position: relative;
-    .bar {
-        height: 50px;
-        @include borderbox;
-        border-bottom: 3px #222 solid;
-        background-color: #c73434;
-        .tle {
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 30px;
-            text-indent: 10px;
+body {
+    width: 100%;
+    .main {
+        width: 50%;
+        height: auto;
+        background-color: #eee;
+        border: 3px solid black;
+        margin: 100px auto 0;
+        position: relative;
+        .selebtn {
+            position: absolute;
+            display: none;
+            color: #9C27B0;
+            font-weight: bold;
+            font-size: 2em;
+            text-decoration: none;
+            font-family: arial;
+            right: 10px;
+            top: 452px;
+            z-index: 5;
         }
-        .static{
-            font-weight: 600;
-             text-indent: 10px;
-        }
-    }
-    .showmessage {
-        height: 450px;
-        @include borderbox;
-        padding-right: 200px;
-        overflow: hidden;
-        overflow-y: auto;
-        background-color: #64c12a;
-        p {
-            width: 440px;
-            word-wrap: break-word;
-            word-break: normal;
-        }
-        img {
-            max-width: 99%;
-        }
-    }
-    .typing {
-        position: absolute;
-        top: 50px;
-        right: 0;
-        width: 200px;
-        height: 450px;
-        background-color: #66f;
-        float: left;
-        border-left: 3px #222 solid;
-        .pic {
-            img {
-                width: 200px;
-                height: 200px;
-                display: block;
+        .bar {
+            height: 55px;
+            @include borderbox;
+            border-bottom: 3px #222 solid;
+            background-color: #c73434;
+            .tle {
+                font-size: 20px;
+                font-weight: 700;
+                line-height: 30px;
+                text-indent: 10px;
+            }
+            .static {
+                font-weight: 600;
+                text-indent: 10px;
             }
         }
-        .btn {
-            li {
-                float: left;
-                list-style: none;
-                input {
+        .showmessage {
+            height: 450px;
+            @include borderbox;
+            padding-right: 200px;
+            overflow: hidden;
+            overflow-y: auto;
+            background-color: #64c12a;
+            p {
+                width: 440px;
+                word-wrap: break-word;
+                word-break: normal;
+            }
+            img {
+                max-width: 99%;
+            }
+        }
+        .typing {
+            position: absolute;
+            top: 55px;
+            right: 0;
+            width: 29.5%;
+            height: 450px;
+            background-color: #66f;
+            float: left;
+            border-left: 3px #222 solid;
+            .pic {
+                img {
+                    width: 100%;
+                    height: 200px;
                     display: block;
-                    width: 100px;
-                    height: 20px;
-                    background-color: #d637d1;
-                    text-align: center;
-                    line-height: 16px;
-                    font-style: normal;
-                    text-decoration: none;
-                    @include borderbox;
-                    cursor: pointer;
-                    outline: none;
-                    border-bottom: 2px solid #224;
                 }
-                .rbd{
-                    border-right: 2px solid #224;
-                }
-                .imageLable {
-                    position: relative;
-                    .sendImage {
-                        position: absolute;
-                        width: 100px;
-                        top: -20px;
-                        left: 0;
-                        opacity: 0;
-                        overflow: hidden;
+            }
+            .btn {
+                width: 100%;
+                li {
+                    width: 50%;
+                    float: left;
+                    list-style: none;
+                    display: inline-block;
+                    input {
+                        display: block;
+                        width: 100%;
+                        height: 20px;
+                        background-color: #d637d1;
+                        text-align: center;
+                        line-height: 16px;
+                        font-style: normal;
+                        text-decoration: none;
+                        @include borderbox;
+                        cursor: pointer;
+                        outline: none;
+                        // border-bottom: 2px solid #224;
+                    }
+                    .rbd {
+                        border-right: 2px solid #224;
+                    }
+                    .imageLable {
+                        position: relative;
+                        .sendImage {
+                            position: absolute;
+                            background-color: red;
+                            width: 100%;
+                            top: -20px;
+                            left: 0;
+                            opacity: 0;
+                            padding: 0 50%;
+                            overflow: hidden;
+                        }
+                    }
+                    .utlbtn {
+                        width: 200%;
+                    }
+                    .disabled {
+                        color: #fff;
                     }
                 }
-                .utlbtn {
-                    width: 200px;
+            }
+            .funwrapper {
+                position: absolute;
+                top: 238px;
+                left: 0px;
+                width: 100%;
+                background-color: black;
+                display: none;
+                img {
+                    float: left;
+                    margin: 2px;
+                    padding: 2px;
+                    width: 25px;
+                    height: 25px;
                 }
-                .disabled{
-                    color: #fff ;
+            }
+            .typeBlock {
+                .send {
+                    width: 100%;
+                    height: 30px;
+                    background-color: #1f9cd8;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    font-weight: 700;
+                    border: 0;
+                    font-size: 18px;
+                    border-top: 3px solid black;
+                }
+                .type {
+                    background-color: #d8e600;
+                    width: 100%;
+                    height: 160px;
+                    overflow: hidden;
+                    scroll-y: auto;
+                    overflow-x: hidden;
+                    border: 0;
+                    outline: none;
+                    font-size: 18px;
+                    padding: 5px;
+                    box-sizing: border-box;
                 }
             }
         }
-        .funwrapper {
-            position: absolute;
-            top: 238px;
-            left: 0px;
-            width: 100%;
-            background-color: black;
+        .mask {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: rgba(0, 0, 0, 0.6);
+            display: none;
+        }
+        .login {
+            width: 50%;
+            height: 80px;
+            position: fixed;
+            top: 200px;
+            left: 50%;
+            border: 3px solid #eee;
+            display: none;
+            background-color: #59d8d2;
+            margin-left: -25%;
+            .name {
+                padding: 0 20px;
+                width: 60%;
+                height: 20px;
+                line-height: 20px;
+                font-size: 15px;
+                border: 0;
+                float: left;
+                outline: none;
+                @include borderbox;
+            }
+            .confirm {
+                background-color: #ead016;
+                width: 40%;
+                height: 20px;
+                border: 0;
+                float: left;
+            }
+        }
+        .utlImg {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
             display: none;
             img {
-                float: left;
-                margin: 2px;
-                padding: 2px;
-                width: 25px;
-                height: 25px;
-            }
-        }
-        .typeBlock {
-            .send {
                 width: 100%;
-                height: 30px;
-                background-color: #1f9cd8;
-                position: absolute;
-                bottom: 0;
-                right: 0;
-                font-weight: 700;
-                border: 0;
-                font-size: 18px;
-                border-top: 3px solid black;
-            }
-            .type {
-                background-color: #d8e600;
-                width: 100%;
-                height: 160px;
-                overflow: hidden;
-                scroll-y:auto;
-                overflow-x: hidden;
-                border: 0;
-                outline: none;
-                font-size: 18px;
-                padding:5px;
-                box-sizing:border-box;
+                height: 100%;
             }
         }
-    }
-    .mask {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background-color: rgba(0, 0, 0, 0.6);
-        display: none;
-    }
-    .login {
-        width: 350px;
-        height: 80px;
-        position: fixed;
-        top: 200px;
-        left: 50%;
-        border: 3px solid #eee;
-        display: none;
-        background-color: #59d8d2;
-        margin-left: -175px;
-        .name {
-            padding: 0 20px;
-            width: 160px;
-            height: 20px;
-            line-height: 20px;
-            font-size: 15px;
-            border: 0;
-            float: left;
-            outline: none;
-        }
-        .confirm {
-            background-color: #ead016;
-            width: 150px;
-            height: 20px;
-            border: 0;
-            float: left;
+        .active {
+            display: block;
         }
     }
-    .utlImg {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        display: none;
-        img {
+    @media screen and (max-width:768px) {
+        .main {
             width: 100%;
-            height: 100%;
+            @include borderbox;
+            margin: 0;
+            .selebtn {
+                display: block;
+            }
+            .showmessage {
+                height: 530px;
+            }
+            .typing {
+                position: static;
+                width: 100%;
+                visibility: hidden;
+                .header {
+                    .pic {
+                        display: none;
+                    }
+                    .btn {
+                        position: absolute;
+                        bottom: 130px;
+                        left: 0;
+                        visibility: visible;
+                        z-index: 6;
+                        display: none;
+                    }
+                    .funwrapper {
+                        display: none;
+                        position: absolute;
+                        bottom: 57px;
+                        left: 0px;
+                        width: 100%;
+                        background-color: black;
+                        visibility: visible;
+                        z-index: 7;
+                    }
+                }
+                .typeBlock {
+                    .type {
+                        position: absolute;
+                        left: 0;
+                        bottom: 30px;
+                        height: 100px;
+                        visibility: visible;
+                    }
+                    .send {
+                        visibility: visible;
+                    }
+                }
+            }
         }
-    }
-    .active {
-        display: block;
     }
 }

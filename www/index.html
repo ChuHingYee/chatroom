@@ -4,12 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Just for fun</title>
-    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-    <link rel="stylesheet" href="./css/css.css">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body>
     <div class="main">
+        <div class="selebtn" id="selebtn">Ξ</div>
         <div class="bar">
             <p class="tle">just for fun</p>
             <p class="static" id="static"></p>
@@ -21,7 +22,7 @@
                 <div class="pic">
                     <a href="#"><img src="./imgs/fun.jpg" alt=""></a>
                 </div>
-                <div class="btn">
+                <div class="btn" id="btns">
                     <ul>
                         <li>
                             <input type="color" id="color" class="rbd">
@@ -39,19 +40,18 @@
                             <input type="button" id="clean" value="clean">
                         </li>
                         <li>
-                            <input type="button" id="utlbtn" class="utlbtn" value="FULL-CREEN-ATTACK">
+                            <input type="button" id="utlbtn" class="utlbtn" value="FULL-ATTACK">
                         </li>
                     </ul>
                 </div>
                 <div class="funwrapper" id="funwrapper">
                 </div>
-                <div class="typeBlock">
-                    <textarea name="type" id="type" class="type"></textarea>
-                    <button class="send" id="send">send</button>
-                </div>
+            </div>
+            <div class="typeBlock">
+                <textarea name="type" id="type" class="type"></textarea>
+                <button class="send" id="send">send</button>
             </div>
         </div>
-        
         <div class="mask" id="mask"></div>
         <div class="login" id="login">
             <input type="text" id="name" class="name">
@@ -63,8 +63,8 @@
             <img src="./imgs/utl.gif" alt="">
         </div>
     </div>
-        <script src="./socket.io/socket.io.js"></script>
-        <script src="./js/init.js"></script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="./js/init.js"></script>
 </body>
 
 </html>
