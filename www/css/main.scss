@@ -26,8 +26,8 @@ body {
             font-size: 2em;
             text-decoration: none;
             font-family: arial;
-            right: 10px;
-            top: 452px;
+            right: 6px;
+            top: 458px;
             z-index: 5;
         }
         .bar {
@@ -47,14 +47,16 @@ body {
             }
         }
         .showmessage {
+            width: 100%;
             height: 450px;
             @include borderbox;
-            padding-right: 200px;
+            padding-left:2%;
+            padding-right: 29.5%;
             overflow: hidden;
             overflow-y: auto;
             background-color: #64c12a;
             p {
-                width: 440px;
+                width: 95%;
                 word-wrap: break-word;
                 word-break: normal;
             }
@@ -225,6 +227,7 @@ body {
             width: 100%;
             @include borderbox;
             margin: 0;
+            overflow: hidden;
             .selebtn {
                 display: block;
             }
@@ -235,6 +238,7 @@ body {
                 position: static;
                 width: 100%;
                 visibility: hidden;
+                height: auto;
                 .header {
                     .pic {
                         display: none;
@@ -265,12 +269,27 @@ body {
                         bottom: 30px;
                         height: 100px;
                         visibility: visible;
+                        overflow: scroll;
+                        padding: 0px 26px 0 20px;
+                        scroll-x: hidden;
                     }
                     .send {
                         visibility: visible;
                     }
                 }
+
             }
+            .login {
+                    width: 70%;
+                    height: 80px;
+                    margin-left: -35%;
+                    .name {
+                        height: 43px;
+                    }
+                    .confirm {
+                        height: 43px;
+                    }
+                }
         }
     }
 }

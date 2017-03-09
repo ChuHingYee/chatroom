@@ -138,7 +138,7 @@ funChat.prototype = {
         });
         that.socket.on("utlshow", function(name, mes,num) {
             that._showUtl(num);
-            that._showMessage("name", mes)
+            // that._showMessage("name", mes)
         });
         that.socket.on("tip",function(num){
             that._tipForU(num);
@@ -211,7 +211,7 @@ funChat.prototype = {
         var that= this;
         var btn = that.$("utlbtn");
         if(num!=0){
-            btn.value="FULL-CREEN-ATTACK"+"(" + num + "time)";
+            btn.value="FUll-ATTACK"+"(" + num + "time)";
         } else{
             btn.value="utl had left you ";
             btn.disabled = "disabled";
