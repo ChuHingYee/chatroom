@@ -17,6 +17,10 @@ funChat.prototype = {
         this.socket = io.connect();
         this.socket.on("connect", function() {
             // console.log(11);
+            if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+                that.$("typeBlock").style.display = "none";
+                that.$("selebtn").style.display = "none";
+            }
             that.$("mask").style.display = "block";
             that.$("login").style.display = "block";
             that.$("info").textContent = "get your nick name by yourself";
@@ -42,6 +46,10 @@ funChat.prototype = {
             that.$("mask").style.display = "none";
             that.$("login").style.display = "none";
             // console.log(11);
+            if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+                that.$("typeBlock").style.display = "block";
+                that.$("selebtn").style.display = "none";
+            }
             that.$("type").focus();
         });
         that.socket.on("system", function(nickName, usersCount, type) {

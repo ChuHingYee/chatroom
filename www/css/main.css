@@ -3,7 +3,8 @@
   margin: 0; }
 
 body {
-  width: 100%; }
+  width: 100%;
+  background-color: #ff9800; }
   body .main {
     width: 50%;
     height: auto;
