@@ -17,11 +17,11 @@ body {
       display: none;
       color: #9C27B0;
       font-weight: bold;
-      font-size: 2em;
+      font-size: 2.5em;
       text-decoration: none;
       font-family: arial;
-      left: 6px;
-      bottom: 90px;
+      left: 9px;
+      bottom: 80px;
       z-index: 5; }
     body .main .bar {
       height: 55px;

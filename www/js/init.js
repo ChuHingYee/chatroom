@@ -48,7 +48,7 @@ funChat.prototype = {
             // console.log(11);
             if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
                 that.$("typeBlock").style.display = "block";
-                that.$("selebtn").style.display = "none";
+                that.$("selebtn").style.display = "block";
             }
             that.$("type").focus();
         });
