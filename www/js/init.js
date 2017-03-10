@@ -12,6 +12,7 @@ var funChat = function() {
 funChat.prototype = {
     init: function() {
         var that = this;
+        that._setHeight();
         that._seleBtn("selebtn");
         this.socket = io.connect();
         this.socket.on("connect", function() {
@@ -136,11 +137,11 @@ funChat.prototype = {
             that.socket.emit("utl");
             that._showMessage("me", "u use the UTLAAAAAAA", "red")
         });
-        that.socket.on("utlshow", function(name, mes,num) {
+        that.socket.on("utlshow", function(name, mes, num) {
             that._showUtl(num);
             // that._showMessage("name", mes)
         });
-        that.socket.on("tip",function(num){
+        that.socket.on("tip", function(num) {
             that._tipForU(num);
         });
 
@@ -208,29 +209,39 @@ funChat.prototype = {
         }, 9000)
     },
     _tipForU: function(num) {
-        var that= this;
+        var that = this;
         var btn = that.$("utlbtn");
-        if(num!=0){
-            btn.value="FUll-ATTACK"+"(" + num + "time)";
-        } else{
-            btn.value="utl had left you ";
+        if (num != 0) {
+            btn.value = "FUll-ATTACK" + "(" + num + "time)";
+        } else {
+            btn.value = "utl had left you ";
             btn.disabled = "disabled";
             btn.className = "utlbtn disabled"
 
         }
     },
     _seleBtn: function(ele) {
-        var that =  this;
+        var that = this;
         var selebtn = that.$(ele);
         var btns = that.$("btns")
-        selebtn.addEventListener("click",function(){
-               if(btns.style.display !== "block"){
+        selebtn.addEventListener("click", function() {
+            if (btns.style.display !== "block") {
                 btns.style.display = "block";
                 return
-               }else{
+            } else {
                 btns.style.display = "none";
-               }
-        },false)
+            }
+        }, false)
+    },
+    _setHeight: function() {
+        // $("body").height( $(window).height() );
+        var that = this;
+        if (navigator.userAgent.match(/(iPhone|iPod|Android|ios)/i)) {
+            document.body.offsetHeight = window.screen.availHeight;
+            console.log(that.$("showMessage").offsetHeight)
+            that.$("showMessage").style.height = window.screen.availHeight - 55 - 130 + "px";
+            console.log(window.screen.availHeight - 55 + "px");
+        }
     },
     $: function(id) {
         return document.getElementById(id);

@@ -12,7 +12,7 @@ body {
     margin: 100px auto 0;
     position: relative; }
     body .main .selebtn {
-      position: absolute;
+      position: fixed;
       display: none;
       color: #9C27B0;
       font-weight: bold;
@@ -20,7 +20,7 @@ body {
       text-decoration: none;
       font-family: arial;
       right: 6px;
-      top: 458px;
+      bottom: 90px;
       z-index: 5; }
     body .main .bar {
       height: 55px;
@@ -200,8 +200,7 @@ body {
       body .main .selebtn {
         display: block; }
       body .main .showmessage {
-        height: 530px;
-        padding-bottom: 150px;
+        padding-bottom: 20px;
         padding-right: 3%;
         padding-left: 3%; }
       body .main .typing {
@@ -212,7 +211,7 @@ body {
         body .main .typing .header .pic {
           display: none; }
         body .main .typing .header .btn {
-          position: absolute;
+          position: fixed;
           bottom: 130px;
           left: 0;
           visibility: visible;
@@ -228,20 +227,27 @@ body {
           visibility: visible;
           z-index: 7; }
         body .main .typing .typeBlock .type {
-          position: absolute;
+          position: fixed;
           left: 0;
           bottom: 30px;
           height: 100px;
           visibility: visible;
           overflow: scroll;
           padding: 0px 26px 0 20px;
-          scroll-x: hidden; }
+          scroll-x: hidden;
+          border-left: 3px solid black;
+          border-right: 3px solid black;
+          border-top: 3px solid black; }
         body .main .typing .typeBlock .send {
-          visibility: visible; }
+          position: fixed;
+          left: 0;
+          bottom: 0;
+          visibility: visible;
+          border: 3px solid black; }
       body .main .login {
-        width: 70%;
+        width: 80%;
         height: 80px;
-        margin-left: -35%; }
+        margin-left: -40%; }
         body .main .login .name {
           height: 43px; }
         body .main .login .confirm {
