@@ -17,7 +17,7 @@ QR code :
 
 ![image](https://github.com/ChuHingYee/chatroom/blob/master/www/imgs/QRcode.png)
 
-![image](https://github.com/ChuHingYee/QQmusicByVUEJS/blob/master/dist/index.png)
+
 
 
 
