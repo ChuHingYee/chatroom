@@ -8,6 +8,7 @@ npm install
 
 #bulid serve at localhost:3000
 node server
+```
 
 QR code :
 
