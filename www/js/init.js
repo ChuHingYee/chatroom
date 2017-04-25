@@ -7,11 +7,13 @@ window.onload = function() {
 
 var funChat = function() {
     this.socket = null;
+    this.mobile = false;
 };
 
 funChat.prototype = {
     init: function() {
         var that = this;
+        that._getCreen();
         that._setHeight();
         that._seleBtn("selebtn");
         this.socket = io.connect();
@@ -37,8 +39,6 @@ funChat.prototype = {
             };
         }, false);
         that.socket.on("nickExisted", function() {
-            // that.$("info").textContent = "this name is existed";
-            console.log(1);
             that.$("info").textContent = "this name is existed";
             that.$("name").focus();
         });
@@ -50,7 +50,9 @@ funChat.prototype = {
                 that.$("typeBlock").style.display = "block";
                 that.$("selebtn").style.display = "block";
             }
-            that.$("type").focus();
+            if(!that.mobile){
+                that.$("type").focus();
+            }
         });
         that.socket.on("system", function(nickName, usersCount, type) {
             var msg = nickName + (type == "login" ? " joined" : " left");
@@ -62,11 +64,12 @@ funChat.prototype = {
             var sendMsg = that.$("type").value;
             color = that.$("color").value;
             type.value = "";
-            type.focus();
+            if(!that.mobile){
+                type.focus();
+            }
             if (sendMsg.trim().length != 0) {
                 that.socket.emit("postMsg", sendMsg, color);
                 that._showMessage("me", sendMsg, color);
-                // console.log(121);
             };
         }, false);
         that.socket.on("newMsg", function(user, msg, color) {
@@ -152,9 +155,12 @@ funChat.prototype = {
         that.socket.on("tip", function(num) {
             that._tipForU(num);
         });
-
-
-
+    },
+    _getCreen: function(){
+        var cw = window.innerWidth || document.documentElement.clientX || document.body.clientX;
+        if(cw < 768){
+            this.mobile = true;
+        }
     },
     _showMessage: function(user, msg, color) {
         var container = this.$("showMessage"),
@@ -225,7 +231,6 @@ funChat.prototype = {
             btn.value = "utl had left you ";
             btn.disabled = "disabled";
             btn.className = "utlbtn disabled"
-
         }
     },
     _seleBtn: function(ele) {

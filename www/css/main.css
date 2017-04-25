@@ -1,10 +1,12 @@
+@charset "UTF-8";
 * {
   padding: 0;
   margin: 0; }
 
 body {
   width: 100%;
-  background-color: #ff9800; }
+  background-color: #ff9800;
+  font: 12px/1.5 Tahoma,Helvetica,Arial,'瀹嬩綋',sans-serif; }
   body .main {
     width: 50%;
     height: auto;
@@ -21,7 +23,7 @@ body {
       text-decoration: none;
       font-family: arial;
       left: 9px;
-      bottom: 80px;
+      bottom: 45px;
       z-index: 5; }
     body .main .bar {
       height: 55px;
@@ -199,7 +201,8 @@ body {
       -moz-box-sizing: border-box;
       box-sizing: border-box;
       margin: 0;
-      overflow: hidden; }
+      overflow: hidden;
+      position: relative; }
       body .main .selebtn {
         display: block; }
       body .main .showmessage {
@@ -219,13 +222,19 @@ body {
           left: 0;
           visibility: visible;
           z-index: 6;
-          display: none; }
+          display: none;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box;
+          border: 3px solid black;
+          margin-bottom: -3px; }
           body .main .typing .header .btn ul li input {
-            height: 38px; }
+            height: 33px; }
         body .main .typing .header .funwrapper {
           display: none;
-          position: absolute;
-          bottom: 57px;
+          position: fixed;
+          top: auto;
+          bottom: 232px;
           left: 0px;
           width: 100%;
           background-color: black;
