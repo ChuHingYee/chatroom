@@ -9,8 +9,13 @@ npm install
 #bulid serve at localhost:3000
 node server
 
-![image](https://github.com/ChuHingYee/chatroom/blob/master/www/imgs/QRcode.png)
+QR code :
 
+
+
+
+
+![image](https://github.com/ChuHingYee/chatroom/blob/master/www/imgs/QRcode.png)
 
 
 
